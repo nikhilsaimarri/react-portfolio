@@ -39,7 +39,8 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-react-refresh": "^0.4.9"
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "vite-plugin-gh-pages": "^1.0.1"
   },
-  "homepage": "https://vcr11.github.io/Portfolio"
+  "homepage": "https://nikhilsaimarri.github.io/react-portfolio"
 }
