@@ -45,11 +45,11 @@ const About = () => {
           <div className="flex-1">
             <p className="text-lg mb-8 text-justify">
               I am currently pursuing a Master of Science in Cybersecurity(Computer Science) at the University of Central Missouri 
-              with a GPA of 3.75/4.0. I have over a year of full-time experience as a Software Engineer at Wipro and 
+              with a GPA of 3.75/4.0. I have over 2 years of full-time experience as a Software Engineer at Wipro and 
               three months as an intern at Wipro Technologies, and 12 months in Maq Software sol. My technical expertise includes Python, Java,Spring Boot,MySql, React.js, Node.js, 
               and cloud technologies such as Azure. I have contributed to impactful projects, optimizing web applications, 
               implementing real-time monitoring systems, and enhancing API efficiency. 
-              I am currently seeking Fall 2025 internship and full-time opportunities where I can contribute, 
+              I am currently seeking full-time Software Engineer opportunities where I can contribute, 
               learn, and grow in a challenging environment.
             </p>
             <p className="text-lg mb-8 text-justify">
