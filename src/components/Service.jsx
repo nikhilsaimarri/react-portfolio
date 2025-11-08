@@ -3,6 +3,19 @@
 // import RqbImage from '../assets/rqb.png';         // Import the RQB Technologies image
 
 const experience = [
+  
+  {
+    company: "MyAtlas Health",
+   // image: AmazonImage,
+    position: "Software Engineer ",
+    duration: "August 2025-Present",
+    location: "Boston, MA",
+    details: [
+      "Design and develop highly scalable backend APIs (Java, Python) for a cross-platform system supporting 10,000+ users; implement tasks across the full Software Development Lifecycle (SDLC).",
+      "Collaborate with peers, manager, and project leads to translate business needs into technical specifications for large-scale production systems.",
+      "Contribute to code and design reviews; automated and optimized CI/CD pipelines, reducing deployment failures by 20% and enhancing system reliability.",
+    ],
+  },
   {
     company: "University Of Central Missouri",
    // image: AmazonImage,
