@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { FaCommentDots, FaPaperPlane, FaTimes } from 'react-icons/fa';
 
 const Chatbot = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
     const [messages, setMessages] = useState([
         { text: "Hi! I'm Nikhil's virtual assistant. Ask me about his skills, projects, or how to contact him!", sender: "bot" }
     ]);
