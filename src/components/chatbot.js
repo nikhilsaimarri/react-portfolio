@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FaCommentDots, FaPaperPlane, FaTimes } from 'react-icons/fa';
 
 const Chatbot = () => {
@@ -61,7 +61,7 @@ const Chatbot = () => {
 
                     {/* Header */}
                     <div className="bg-blue-600 p-4 text-white flex justify-between items-center">
-                        <h3 className="font-bold">Chat with Nikhil's Bot</h3>
+                        <h3 className="font-bold">Chat with Nikhil Bot</h3>
                         <button onClick={() => setIsOpen(false)} className="hover:text-gray-200">
                             <FaTimes />
                         </button>
