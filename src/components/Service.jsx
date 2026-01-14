@@ -1,20 +1,23 @@
  import MyatlasImage from '../assets/Myatlas.png';
  import WiproImage from '../assets/Wipro-Logo.png'; // Import the wipro image
  import UCMImage from '../assets/ucm_logo.png';
- import hclImage from '../assets/hcl_logo.jpg';
 
 const experience = [
-  
+
   {
     company: "MyAtlas Health",
     image: MyatlasImage,
-    position: "Software Engineer ",
+    position: "Software Engineer",
     duration: "August 2025-Present",
     location: "Boston, MA",
     details: [
-      "Design and develop highly scalable backend APIs (Java, Python) for a cross-platform system supporting 10,000+ users; implement tasks across the full Software Development Lifecycle (SDLC).",
-      "Collaborate with peers, manager, and project leads to translate business needs into technical specifications for large-scale production systems.",
-      "Contribute to code and design reviews; automated and optimized CI/CD pipelines, reducing deployment failures by 20% and enhancing system reliability.",
+      "Working on a healthcare platform built with React and Spring Boot that handles patient records for around 15,000 patients daily, made the data loading about 40% faster by optimizing queries and adding Redis cache.",
+      "Built out several microservices (8 total) deployed on AWS ECS which helped the system handle way more traffic during busy times, we're maintaining 99.9% uptime now.",
+      "Developed REST APIs that connect with Epic's FHIR system for healthcare data - these serve about 200 concurrent users with response times usually under 300ms.",
+      "Set up Jenkins pipelines with Docker which cut our deployment time from like 2 hours down to around 15 minutes, now we can push updates 3-4 times a week.",
+      "Implemented OAuth 2.0 authentication using Spring Security to protect patient data, the system now supports over 50K users.",
+      "Integrated GPT-4 API to help automate clinical documentation - doctors are spending about 35% less time on charting, processes roughly 500 notes each day.",
+      "Tuned PostgreSQL performance through indexing and query optimization, average query time went down by more than half.",
     ],
   },
   {
@@ -24,8 +27,8 @@ const experience = [
     duration: "August 2024- August 2025",
     location: "Warrensburg, MO",
     details: [
-      "Automated and deployed Python scripts to automate inventory tracking, directly reducing manual errors by 35%. ", 
-      "Integrated Google Sheets API for real-time data synchronization, enhancing reporting efficiency for 1000+ records daily.",  
+      "Automated and deployed Python scripts to automate inventory tracking, directly reducing manual errors by 35%. ",
+      "Integrated Google Sheets API for real-time data synchronization, enhancing reporting efficiency for 1000+ records daily.",
       "Partnered with IT staff on library system updates, ensuring 99.9% system uptime for 500+ daily users. ",
 
     ],
@@ -33,46 +36,49 @@ const experience = [
   {
     company: "Wipro",
     image: WiproImage,
-    position: "Software Engineer ",
-    duration: "May 2022-Dec 2023",
+    position: "Software Engineer",
+    duration: "May 2022 - Dec 2023",
     location: "Hyderabad, India",
     details: [
-      "Designed, built, and maintained 15+ distributed microservices using Java and Spring Boot, enhancing system modularity and supporting 5000+ concurrent users.",
-      "Implemented 20+ secure RESTful APIs with JWT authentication, improving system security by reducing unauthorized access by 15%.",
-      "Led the development of 3 React-based user portals, enhancing onboarding efficiency for over 5,000 users.",
-      " Automated deployment processes and containerized applications using Docker, accelerating deployment cycles by 30%. " ,
-      "Conducted 50+ code reviews, pinpointing vulnerabilities and preventing production defects, leading to higher quality code, and ensuring adherence to coding standards on three Agile teams.",
-      "Optimized relational database queries for MySQL, achieving a 25% improvement in response times for critical data operations. Integrated Kafka for asynchronous messaging pipelines across critical modules, improving data flow reliability.",
-      "Used Redis for real-time caching, leading to 28% faster response times for high-traffic endpoints.",
-
+      "Built enterprise web apps using Java Spring Boot and Angular for large clients, these applications were used by around 100,000+ people daily across multiple countries.",
+      "Created over 25 RESTful APIs with Spring MVC that mobile and web apps consume, maintained about 99.5% success rate on API calls.",
+      "Helped migrate an old monolithic app to microservices using Spring Cloud, this ended up saving around $8K per month on server costs and made deployments much smoother.",
+      "Worked with Apache Kafka for real-time data streaming that handles over 1 million events per hour with pretty low latency (under 2 seconds).",
+      "Put together automated testing using JUnit and Mockito, got code coverage up to 85% which really helped reduce bugs in production by almost half.",
+      "Worked in an Agile team with 7-8 other developers, we delivered 12 major features across several sprint cycles.",
+      "Set up Docker containers and worked with Kubernetes for deployments, this reduced the time to set up new environments from a few days to just a couple hours.",
+      "Did a lot of MySQL optimization work including query tuning and connection pooling which improved overall performance by about 30%.",
     ],
   },
   {
     company: "Wipro",
     image: WiproImage,
     position: "Software Engineer Intern",
-    duration: "March 2022 – May 2022",
-    location: "Remote",
+    duration: "Mar 2021 - May 2022",
+    location: "Hyderabad, India",
     details: [
-      "Created internal automation tools using Python, automating data processing tasks and reducing manual effort by 40%." ,
-      "Provided critical support for the migration of 5 legacy systems to a distributed microservices architecture, increasing system reliability by 10%.", 
-      "Actively participated in daily stand-ups and sprint retrospectives, contributing to continuous process improvement within a cross-functional team." ,
+      "Built responsive UI components using React and Redux for an internal dashboard that around 500 employees use daily.",
+      "Wrote automated test scripts with Selenium which saved the QA team about 20 hours of manual testing every sprint.",
+      "Created Python scripts to automate report generation for business metrics, this saved roughly 15 hours of manual work each week.",
+      "Participated in code reviews and learned a lot about maintaining code quality standards.",
+      "Helped with an AWS migration project where we moved 5 applications to EC2 with no downtime.",
     ],
   },
-  {
-    company: "Hcl Tech",
-    image: hclImage,
-    position: "Software Engineer Intern",
-    duration: "Jan 2021 – Feb 2022",
-    location: "Vizag, India",
-    details: [
-      "Developed a responsive web application for API testing using React, enhancing testing efficiency and reducing manual intervention by 20%.",
-      "Designed and implemented 3 APIs, enhancing key functionalities such as IP verification, token generation, and database interactions, leading to a 20% improvement in response times.",
-      "Built a Python-based backend to handle authentication processes, using network-based SIM identification, reducing manual intervention and increasing system security.",
-      "Created network-based authentication through SIM-based IP address mapping, strengthening security and improving login success rates by 30%.",
-      "Integrated MongoDB to log critical API responses and authentication attempts, enhancing audit capabilities and reducing troubleshooting time.",
-    ],
-  },
+
+  // {
+  //   company: "Hcl Tech",
+  //   image: hclImage,
+  //   position: "Software Engineer Intern",
+  //   duration: "Jan 2021 – Feb 2022",
+  //   location: "Vizag, India",
+  //   details: [
+  //     "Developed a responsive web application for API testing using React, enhancing testing efficiency and reducing manual intervention by 20%.",
+  //     "Designed and implemented 3 APIs, enhancing key functionalities such as IP verification, token generation, and database interactions, leading to a 20% improvement in response times.",
+  //     "Built a Python-based backend to handle authentication processes, using network-based SIM identification, reducing manual intervention and increasing system security.",
+  //     "Created network-based authentication through SIM-based IP address mapping, strengthening security and improving login success rates by 30%.",
+  //     "Integrated MongoDB to log critical API responses and authentication attempts, enhancing audit capabilities and reducing troubleshooting time.",
+  //   ],
+  // },
 ];
 
 const Experience = () => {

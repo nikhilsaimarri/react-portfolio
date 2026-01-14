@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { FaCommentDots, FaPaperPlane, FaTimes } from 'react-icons/fa';
 
 const Chatbot = () => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false); // Changed to false so it doesn't pop open immediately on load
     const [messages, setMessages] = useState([
         { text: "Hi! I'm Nikhil's virtual assistant. Ask me about his skills, projects, or how to contact him!", sender: "bot" }
     ]);
@@ -61,7 +61,7 @@ const Chatbot = () => {
 
                     {/* Header */}
                     <div className="bg-blue-600 p-4 text-white flex justify-between items-center">
-                        <h3 className="font-bold">Chat with Nikhil Bot</h3>
+                        <h3 className="font-bold">Chat with Nikhil&apos;s Bot</h3>
                         <button onClick={() => setIsOpen(false)} className="hover:text-gray-200">
                             <FaTimes />
                         </button>
@@ -78,7 +78,7 @@ const Chatbot = () => {
                                     className={`max-w-[80%] p-3 rounded-lg text-sm ${
                                         msg.sender === "user"
                                             ? "bg-blue-600 text-white rounded-br-none"
-                                            : "bg-gray-200 dark:bg-gray-700 dark:text-gray-100 rounded-bl-none"
+                                            : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 rounded-bl-none"
                                     }`}
                                 >
                                     {msg.text}
@@ -92,7 +92,7 @@ const Chatbot = () => {
                     <form onSubmit={handleSend} className="p-3 bg-white dark:bg-gray-800 border-t dark:border-gray-700 flex items-center">
                         <input
                             type="text"
-                            className="flex-1 border dark:border-gray-600 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                            className="flex-1 border dark:border-gray-600 rounded-full px-4 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                             placeholder="Type a message..."
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
