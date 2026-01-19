@@ -2,16 +2,23 @@ import { useState, useEffect } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  // Set initial state to true for dark mode default
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setDarkMode(true);
-      document.documentElement.classList.add('dark');
-    } else {
+    if (savedTheme === 'light') {
+      // Check for light mode instead
       setDarkMode(false);
       document.documentElement.classList.remove('dark');
+    } else {
+      // Default to dark mode if no preference saved
+      setDarkMode(true);
+      document.documentElement.classList.add('dark');
+      // Optionally save dark as default
+      if (!savedTheme) {
+        localStorage.setItem('theme', 'dark');
+      }
     }
   }, []);
 
@@ -28,14 +35,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`px-4 sm:px-6 md:px-8 lg:px-12 py-4 transition-colors duration-300 ease-in-out 
+    <nav className={`px-4 sm:px-6 md:px-8 lg:px-12 py-4 transition-colors duration-300 ease-in-out
       ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
-      
+
       <div className='container mx-auto flex flex-col md:flex-row justify-between items-center'>
         <div className='text-2xl font-bold mb-4 md:mb-0'>
           Nikhil Sai
         </div>
-        
+
         <div className='flex flex-col md:flex-row items-center md:space-x-6'>
           <a href="#home" className='py-2 px-4 hover:text-gray-400 dark:hover:text-gray-300'>Home</a>
           <a href="#about" className='py-2 px-4 hover:text-gray-400 dark:hover:text-gray-300'>About Me</a>
