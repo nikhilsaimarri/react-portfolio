@@ -141,7 +141,7 @@ Answer questions professionally and accurately based on this information. If ask
 
     const callGeminiAPI = async (userMessage) => {
 
-        const API_KEY = process.env.REACT_APP_GEMINI_API_KEY; // Get from environment variable
+        const API_KEY = 'AIzaSyCMSOQ-7d_jCUArzL2BchSWREMLIy7ODSI'; // Replace with actual key
 
 
         try {
@@ -599,5 +599,5 @@ export default AIGeminiChatbot;
 // curl \
 //   -H 'Content-Type: application/json' \
 //   -d '{"contents":[{"parts":[{"text":"Say hello"}]}]}' \
-//   -X POST 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=YOUR_API_KEY'
-//
+//   -X POST 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyA0qGrXxGEy4Yq1UNG4vMW--MF4HWPbXFw'
+

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.72fb1f26.css",
-    "main.js": "/react-portfolio/static/js/main.6897b8cc.js",
+    "main.css": "/react-portfolio/static/css/main.4450e754.css",
+    "main.js": "/react-portfolio/static/js/main.84fa11ed.js",
     "static/media/hero-image.png": "/react-portfolio/static/media/hero-image.4ec44b1aab15f47d7cd1.png",
     "static/media/Nikhil_Resume.pdf": "/react-portfolio/static/media/Nikhil_Resume.da721f5359c47ace8c0d.pdf",
     "static/media/nptel.webp": "/react-portfolio/static/media/nptel.36e419d2091f0000f815.webp",
@@ -12,11 +12,11 @@
     "static/media/hacker.png": "/react-portfolio/static/media/hacker.e0b25d6e828d776241ff.png",
     "static/media/anits.jpg": "/react-portfolio/static/media/anits.79824360c3f097171b02.jpg",
     "index.html": "/react-portfolio/index.html",
-    "main.72fb1f26.css.map": "/react-portfolio/static/css/main.72fb1f26.css.map",
-    "main.6897b8cc.js.map": "/react-portfolio/static/js/main.6897b8cc.js.map"
+    "main.4450e754.css.map": "/react-portfolio/static/css/main.4450e754.css.map",
+    "main.84fa11ed.js.map": "/react-portfolio/static/js/main.84fa11ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.72fb1f26.css",
-    "static/js/main.6897b8cc.js"
+    "static/css/main.4450e754.css",
+    "static/js/main.84fa11ed.js"
   ]
 }
