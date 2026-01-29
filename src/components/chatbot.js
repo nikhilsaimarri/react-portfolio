@@ -1,179 +1,3 @@
-// import { useState, useRef, useEffect } from 'react';
-// import { FaCommentDots, FaPaperPlane, FaTimes, FaRobot, FaUser } from 'react-icons/fa';
-//
-// const Chatbot = () => {
-//     const [isOpen, setIsOpen] = useState(false);
-//     const [messages, setMessages] = useState([
-//         { text: "Hi! I'm Nikhil's virtual assistant. Ask me about his skills, projects, or how to contact him!", sender: "bot" }
-//     ]);
-//     const [input, setInput] = useState("");
-//     const [isTyping, setIsTyping] = useState(false);
-//     const messagesEndRef = useRef(null);
-//
-//     const scrollToBottom = () => {
-//         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-//     };
-//
-//     useEffect(() => {
-//         scrollToBottom();
-//     }, [messages]);
-//
-//     const getBotResponse = (message) => {
-//         const lowerMsg = message.toLowerCase();
-//
-//         if (lowerMsg.includes("hello") || lowerMsg.includes("hi")) {
-//             return "Hello there! How can I help you today?";
-//         } else if (lowerMsg.includes("skill") || lowerMsg.includes("stack") || lowerMsg.includes("technology")) {
-//             return "Nikhil is proficient in Java, Spring Boot, React, AWS, and Python. He loves full-stack development!";
-//         } else if (lowerMsg.includes("project") || lowerMsg.includes("work")) {
-//             return "He has built impressive projects like an AI-powered financial platform and a Chatbot using GraphQL. Check out the Projects section!";
-//         } else if (lowerMsg.includes("contact") || lowerMsg.includes("email") || lowerMsg.includes("hire")) {
-//             return "You can reach him via the Contact form or email him directly. He is currently open to new opportunities!";
-//         } else if (lowerMsg.includes("resume") || lowerMsg.includes("cv")) {
-//             return "You can download his resume from the 'About' section of this site.";
-//         } else {
-//             return "I'm not sure about that, but I'm still learning! Try asking about 'skills', 'projects', or 'contact'.";
-//         }
-//     };
-//
-//     const handleSend = (e) => {
-//         e.preventDefault();
-//         if (!input.trim()) return;
-//
-//         const newMessages = [...messages, { text: input, sender: "user" }];
-//         setMessages(newMessages);
-//         setInput("");
-//         setIsTyping(true);
-//
-//         setTimeout(() => {
-//             const botReply = getBotResponse(input);
-//             setMessages((prev) => [...prev, { text: botReply, sender: "bot" }]);
-//             setIsTyping(false);
-//         }, 800);
-//     };
-//
-//     return (
-//         <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end">
-//             {/* Chat Window */}
-//             {isOpen && (
-//                 <div className="bg-white dark:bg-gray-800 w-80 sm:w-96 h-[32rem] rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col overflow-hidden mb-4 animate-in slide-in-from-bottom-4 duration-300">
-//
-//                     {/* Header with Gradient */}
-//                     <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 text-white flex justify-between items-center">
-//                         <div className="flex items-center gap-3">
-//                             <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-//                                 <FaRobot className="text-white" size={20} />
-//                             </div>
-//                             <div>
-//                                 <h3 className="font-bold text-lg">Nikhil&apos;s Assistant</h3>
-//                                 <p className="text-xs text-blue-100">Online now</p>
-//                             </div>
-//                         </div>
-//                         <button
-//                             onClick={() => setIsOpen(false)}
-//                             className="hover:bg-white/20 p-2 rounded-lg transition-colors"
-//                         >
-//                             <FaTimes size={18} />
-//                         </button>
-//                     </div>
-//
-//                     {/* Messages Area with Gradient Background */}
-//                     <div className="flex-1 p-4 overflow-y-auto bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-//                         {messages.map((msg, index) => (
-//                             <div
-//                                 key={index}
-//                                 className={`mb-4 flex items-end gap-2 ${msg.sender === "user" ? "justify-end" : "justify-start"} animate-in fade-in slide-in-from-bottom-2 duration-300`}
-//                             >
-//                                 {msg.sender === "bot" && (
-//                                     <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
-//                                         <FaRobot className="text-white" size={14} />
-//                                     </div>
-//                                 )}
-//                                 <div
-//                                     className={`max-w-[75%] p-3 rounded-2xl text-sm shadow-sm ${
-//                                         msg.sender === "user"
-//                                             ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-br-sm"
-//                                             : "bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm border border-gray-200 dark:border-gray-600"
-//                                     }`}
-//                                 >
-//                                     {msg.text}
-//                                 </div>
-//                                 {msg.sender === "user" && (
-//                                     <div className="w-8 h-8 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
-//                                         <FaUser className="text-white" size={12} />
-//                                     </div>
-//                                 )}
-//                             </div>
-//                         ))}
-//
-//                         {/* Typing Indicator */}
-//                         {isTyping && (
-//                             <div className="flex items-end gap-2 mb-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
-//                                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
-//                                     <FaRobot className="text-white" size={14} />
-//                                 </div>
-//                                 <div className="bg-white dark:bg-gray-700 p-3 rounded-2xl rounded-bl-sm border border-gray-200 dark:border-gray-600 shadow-sm">
-//                                     <div className="flex gap-1">
-//                                         <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-//                                         <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-//                                         <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                         )}
-//                         <div ref={messagesEndRef} />
-//                     </div>
-//
-//                     {/* Input Area with Enhanced Styling */}
-//                     <form onSubmit={handleSend} className="p-4 bg-white dark:bg-gray-800 border-t dark:border-gray-700 flex items-center gap-2">
-//                         <input
-//                             type="text"
-//                             className="flex-1 border border-gray-300 dark:border-gray-600 rounded-full px-4 py-3 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-all"
-//                             placeholder="Type your message..."
-//                             value={input}
-//                             onChange={(e) => setInput(e.target.value)}
-//                         />
-//                         <button
-//                             type="submit"
-//                             className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all shadow-md hover:shadow-lg transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
-//                             disabled={!input.trim()}
-//                         >
-//                             <FaPaperPlane size={16} />
-//                         </button>
-//                     </form>
-//                 </div>
-//             )}
-//
-//             {/* Enhanced Toggle Button with Multiple Animations */}
-//             <button
-//                 onClick={() => setIsOpen(!isOpen)}
-//                 className={`bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white p-4 rounded-full shadow-xl transition-all transform hover:scale-110 flex items-center justify-center relative group ${
-//                     !isOpen ? 'animate-bounce' : ''
-//                 }`}
-//                 style={!isOpen ? { animationDuration: '2s', animationIterationCount: 'infinite' } : {}}
-//             >
-//                 {!isOpen && (
-//                     <>
-//                         <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white animate-pulse"></span>
-//                         {/* Ripple Effect */}
-//                         <span className="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-75"></span>
-//                     </>
-//                 )}
-//                 {isOpen ? <FaTimes size={24} /> : <FaCommentDots size={24} className="relative z-10" />}
-//
-//                 {/* Tooltip */}
-//                 {!isOpen && (
-//                     <span className="absolute right-full mr-3 bg-gray-900 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">
-//                         Chat with me! 💬
-//                     </span>
-//                 )}
-//             </button>
-//         </div>
-//     );
-// };
-//
-// export default Chatbot;
-
 
 
 
@@ -240,7 +64,7 @@ ABOUT:
 
 - Email: nikhilsaimarri@gmail.com
 
-- Phone: +1 (660) 441-0849
+- Phone: +1 (660) 262 - 2910
 
 - LinkedIn: linkedin.com/in/nikhilsaimarri
 
@@ -249,9 +73,9 @@ ABOUT:
 
 EDUCATION:
 
-- Master of Science in Computer Science - University of Central Missouri (2023-2024, GPA: 3.5/4.0)
+- Master of Science in Computer Science - University of Central Missouri (2023-2024, GPA: 3.7/4.0)
 
-- Bachelor of Technology in Computer Science - Amrita Vishwa Vidyapeetham (2018-2022, GPA: 8.4/10)
+- Bachelor of Technology in Computer Science - Anil Neerukonda Institute of Technology and Sciences (2018-2022, GPA: 7.5/10)
 
 
 TECHNICAL SKILLS:
@@ -317,7 +141,7 @@ Answer questions professionally and accurately based on this information. If ask
 
     const callGeminiAPI = async (userMessage) => {
 
-        const API_KEY = 'AIzaSyA0qGrXxGEy4Yq1UNG4vMW--MF4HWPbXFw'; // Replace with actual key
+        const API_KEY = process.env.REACT_APP_GEMINI_API_KEY; // Get from environment variable
 
 
         try {
@@ -408,7 +232,7 @@ Answer questions professionally and accurately based on this information. If ask
 
         if (lowerMsg.includes("contact") || lowerMsg.includes("email") || lowerMsg.includes("reach") || lowerMsg.includes("hire")) {
 
-            return "📧 **Email**: nikhilsaimarri@gmail.com\n📱 **Phone**: +1 (660) 441-0849\n💼 **LinkedIn**: linkedin.com/in/nikhilsaimarri\n🔗 **GitHub**: github.com/nikhilsaimarri\n\nNikhil is currently open to new opportunities and would love to hear from you!";
+            return "📧 **Email**: nikhilsaimarri@gmail.com\n📱 Phone: +1 (660) 262-2910\n💼 **LinkedIn**: linkedin.com/in/nikhilsaimarri\n🔗 **GitHub**: github.com/nikhilsaimarri\n\nNikhil is currently open to new opportunities and would love to hear from you!";
 
         }
 
@@ -775,5 +599,5 @@ export default AIGeminiChatbot;
 // curl \
 //   -H 'Content-Type: application/json' \
 //   -d '{"contents":[{"parts":[{"text":"Say hello"}]}]}' \
-//   -X POST 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyA0qGrXxGEy4Yq1UNG4vMW--MF4HWPbXFw'
+//   -X POST 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=YOUR_API_KEY'
 //
